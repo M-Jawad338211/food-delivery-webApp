@@ -1,9 +1,10 @@
 import React from 'react';
+import Home from './pages/Home';
 
 function App() {
   return (
-    <div className="text-red-900">
-      himk d k kv
+    <div>
+      <Home />
     </div>
   );
 }
