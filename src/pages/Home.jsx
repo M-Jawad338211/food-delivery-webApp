@@ -1,6 +1,7 @@
 import React from "react";
 import Nav from "../components/Nav";
 import Categories from "../Category";
+import Card from "../components/Card";
 
 function Home() {
     return (
@@ -12,13 +13,15 @@ function Home() {
             return (
                 <div key={item.id} className="w-[140px] h-[150px] bg-white
                 flex flex-col items-start gap-5 p-5 justify-start
-                text-xl font-semibold text-gray-700 rounded-lg shadow-xl">          
+                text-xl font-semibold text-gray-700 rounded-lg shadow-xl
+                hover:bg-green-200 cursor-pointer transition-all duration-200">          
                 {item.icon}
                 {item.name}
                 </div>
             );
             })}
            </div>
+           <Card />
         </div>
     )
 }
