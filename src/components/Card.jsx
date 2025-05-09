@@ -4,7 +4,8 @@ import { GiChickenOven } from "react-icons/gi";
 function Card({name,image,id,price,type}) {
     return (
         <div className="w-[300px] h-[400px] bg-white p-3 rounded-lg
-        flex flex-col gap-3 shadow-lg">
+        flex flex-col gap-3 shadow-lg hover:border-2
+        hover:border-green-300">
             <div className="w-full h-[60%] overflow-hidden rounded-lg">
                 <img src={image} alt="" className="object-cover" />
             </div>
@@ -19,7 +20,7 @@ function Card({name,image,id,price,type}) {
                       <span>{type}</span>
                     </div>
             </div>
-            <button className="w-full text-gray-700 bg-green-300
+            <button className="w-full text-white bg-green-500
              hover:bg-green-400 text-lg p-2 rounded-lg
              transition-all">Add to dish</button>
         </div>
