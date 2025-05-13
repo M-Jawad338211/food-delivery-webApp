@@ -4,7 +4,7 @@ import Categories from "../Category";
 import Card from "../components/Card";
 import { food_items } from "../food";
 import { dataContext } from "../context/UserContext";
-
+import { RxCross2 } from "react-icons/rx";
 
 function Home() {
     let {cat, setCat,input}=useContext(dataContext);
@@ -48,6 +48,13 @@ function filterCategory(category){
                      type={item.food_type}
                     />
                 ))}
+            </div>
+            <div className="w-[40vw] h-[100%] fixed top-0 right-0
+            bg-white shadow-xl p-6">
+                <header className="w-full flex justify-between items-center">
+                    <span className="text-green-400 text-sm font-semibold ">Order Items</span>
+                    <RxCross2 className="w-9 h-7 cursor-pointer text-green-400 hover:text-gray-600 text-xl font-semibold " />
+                </header>
             </div>
         </div>
     )
