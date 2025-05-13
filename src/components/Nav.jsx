@@ -8,7 +8,7 @@ import { food_items } from "../food";
 
  
 function Nav() {
-        let {input, setInput,cat,setCat}=useContext(dataContext);
+        let {input, setInput,cat,setCat,showCart,setShowCart}=useContext(dataContext);
         useEffect(()=>{
            let newList= food_items.filter((item)=>item.food_name.includes(input)
         || item.food_name.toLowerCase().includes(input))
@@ -19,7 +19,7 @@ function Nav() {
          px-5 md:px-8 ">
            <div className="w-[60px] h-[60px] bg-white flex justify-center items-center
            rounded-md shadow-xl">
-                <MdFastfood className="size-7 text-green-500" />
+                <MdFastfood className="size-7 text-green-500 cursor-pointer" />
            </div>
            <form className="w-[4%] h-[60px] bg-white flex items-center px-5 gap-5 
            rounded-md shadow-md md:w-[70%]"
@@ -29,7 +29,10 @@ function Nav() {
             text-lg md:text-xl" onChange={(e)=>setInput(e.target.value)} value={input}/>
            </form>
            <div className="w-[60px] h-[60px] bg-white flex justify-center items-center
-           rounded-md shadow-md relative">
+           rounded-md shadow-md relative cursor-pointer"
+           onClick={()=>{
+            setShowCart(true)
+           }}>
                     <span className="absolute top-0 right-2 text-green-500 font-bold">0</span>
                 <LuShoppingBag className="size-7 text-green-500"/>
            </div>
